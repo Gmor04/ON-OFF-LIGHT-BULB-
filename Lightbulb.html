@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light bulb</title>
+</head>
+<style>
+    body{ width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .frame{
+     width: 15%;
+     height:40vh;
+     
+
+    }
+    .divbtn{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-top: 6%;
+        margin-left: 6%;
+
+
+    }
+    .btn{
+        width: 60px;
+        height: 50px;
+        border: 2px solid red;
+        border-radius: 10px;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: 600;
+        box-shadow: 3px 3px 4px grey, -3px -3px 4px grey ;
+        background-color: red;
+        color: white;
+
+
+    }
+    .ligimg{
+        width:100%;
+        height:100%;
+    }
+    .ligimgd{
+        width:100%;
+        height:100%;
+    }
+
+</style>
+<body>
+    <div class="frame">
+        <img src="bulbnl.jpg" alt="ight-OFF" class="ligimg" >
+    </div> 
+    <div class="divbtn"><button onclick="Activebtn(event)" class="btn">OFF</button></div>
+</body>
+</html>
+<script>
+    let frame = document.querySelector('.frame');
+    let statuss = 'off'
+
+    function Activebtn(event) {
+        if (statuss == 'off') {
+            frame.innerHTML = `<img src="l2bulb.jpg" alt="Light-NO" class="ligimgd" >`
+            event.target.innerHTML = 'ON'
+            event.target.style.backgroundColor = 'blue'
+            event.target.style.borderColor = 'blue'
+            statuss = 'on'
+        }
+        else{
+            frame.innerHTML = `<img src="bulbnl.jpg" alt="Light-OFF" class="ligimg" >`
+            event.target.innerHTML = 'OFF'
+            event.target.style.backgroundColor = 'red'
+            event.target.style.borderColor = 'red'
+            statuss = 'off'
+        }
+    }
+
+</script>
